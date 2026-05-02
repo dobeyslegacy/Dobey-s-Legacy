@@ -1,0 +1,15 @@
+const { EmbedBuilder } = require('discord.js');
+
+module.exports = {
+    name: 'announce',
+    description: 'Sends an embed message',
+    execute(message, args) {
+        const embed = new EmbedBuilder()
+            .setTitle('Dobey\'s Legacy Updates')
+            .setDescription(args.join(' ')) // Ningal type cheyyunna message ivide varum
+            .setColor(0xFF0000) // Red Color
+            .setTimestamp();
+
+        message.channel.send({ embeds: [embed] });
+    },
+};
